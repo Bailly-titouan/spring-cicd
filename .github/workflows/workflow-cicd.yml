@@ -28,7 +28,7 @@ jobs:
         languages: java
 
     - name: "Compiler et exécuter les tests"
-      run: mvn clean verify
+      run: mvn clean verify -Dspring.profiles.active=test
 
     - name: "Analyser avec CodeQL"
       uses: github/codeql-action/analyze@v3
