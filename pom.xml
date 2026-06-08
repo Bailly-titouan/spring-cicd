@@ -104,15 +104,6 @@
 					<failsOnError>false</failsOnError>
 					<failOnViolation>false</failOnViolation>
 				</configuration>
-				<executions>
-					<execution>
-						<id>checkstyle</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>checkstyle</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.jacoco</groupId>
