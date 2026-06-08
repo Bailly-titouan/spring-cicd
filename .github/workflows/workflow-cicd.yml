@@ -35,6 +35,9 @@ jobs:
       run: mvn checkstyle:checkstyle -Dspring.profiles.active=test
       continue-on-error: true
 
+    - name: "Debug - trouver les fichiers Checkstyle générés"
+      run: find target -name "checkstyle*" 2>/dev/null
+
     - name: "Télécharger le rapport Checkstyle"
       uses: actions/upload-artifact@v4
       with:
