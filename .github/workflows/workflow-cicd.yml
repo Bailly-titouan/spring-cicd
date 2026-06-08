@@ -36,8 +36,14 @@ jobs:
       with:
         output: results/codeql.sarif
 
+    - name: "Convertir les résultats en CSV"
+      uses: mr-sherman/sarif-to-csv@v2.4
+      with:
+        input-file: results/codeql.sarif
+        output-file: results/codeql.csv
+
     - name: "Télécharger les résultats CodeQL"
       uses: actions/upload-artifact@v4
       with:
         name: codeql-results
-        path: results/codeql.sarif
+        path: results/codeql.csv
