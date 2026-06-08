@@ -31,11 +31,15 @@ jobs:
     - name: "Compiler et exécuter les tests"
       run: mvn -B clean verify -Dspring.profiles.active=test
 
+    - name: "Générer le rapport Checkstyle HTML"
+      run: mvn checkstyle:checkstyle -Dspring.profiles.active=test
+      continue-on-error: true
+
     - name: "Télécharger le rapport Checkstyle"
       uses: actions/upload-artifact@v4
       with:
         name: checkstyle-report
-        path: target/checkstyle-result.html
+        path: target/site/checkstyle.html
 
     - name: "Télécharger le rapport JaCoCo"
       uses: actions/upload-artifact@v4
